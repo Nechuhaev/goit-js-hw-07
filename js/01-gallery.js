@@ -1,4 +1,5 @@
 import { galleryItems } from './gallery-items.js';
+
 // Change code below this line
 const galleryContainer = document.querySelector(".gallery");
 const imageMarkup = createImagesCardMarkup(galleryItems);
@@ -26,5 +27,15 @@ function createImagesCardMarkup(galleryItems) {
 }
 
 function onGalleryContainerClick(evt) { 
+    if (!evt.target.classList.contains("gallery__link")) { 
+        return;
+    }
     console.log(evt.target);
 }
+
+// import * as basicLightbox from 'basiclightbox'
+// const instance = basicLightbox.create(`
+//     <img src="${original}" width="800" height="600">
+// `)
+
+// instance.show()
